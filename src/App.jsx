@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchContacts } from "./redux/contactsOps";
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector((state) => state.contacts.isLoading);
   const error = useSelector((state) => state.contacts.error);
@@ -25,6 +25,6 @@ function App() {
       <ContactList />
     </div>
   );
-}
+};
 
 export default App;
