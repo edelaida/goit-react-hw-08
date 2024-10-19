@@ -1,11 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// axios.defaults.baseURL = 'https://task-manager-api.goit.global'; // ❌
-
-export const goitApi = axios.create({
-  baseURL: "https://task-manager-api.goit.global",
-});
+// export const goitApi = axios.create({
+//   baseURL: "https://connections-api.goit.global/",
+// });
+axios.defaults.baseURL = "https://connections-api.goit.global";
 
 const setAuthHeader = (token) => {
   goitApi.defaults.headers.common.Authorization = `Bearer ${token}`;
