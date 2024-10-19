@@ -1,6 +1,14 @@
 import { Field, Form, Formik } from "formik";
+import { login } from "../../redux/auth/operations";
+import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 
 const LoginPages = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const initialValues = {
     email: "",
     password: "",
