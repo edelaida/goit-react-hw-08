@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from "formik";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
 
 const FORM_INITIAL = {
   name: "",
