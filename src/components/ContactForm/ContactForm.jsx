@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from "formik";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contacts/operations";
+import s from "./ContactForm.module.css";
 
 const FORM_INITIAL = {
   name: "",
@@ -19,21 +19,23 @@ const ContactForm = () => {
 
   return (
     <Formik initialValues={FORM_INITIAL} onSubmit={handleSubmit}>
-      <Form>
-        <h2>Add new user</h2>
+      <Form className={s.phoneblok}>
+        <h2 className={s.cont}>Add new contact</h2>
         <label>
-          <span>Name : </span>
+          <span className={s.text}>Name : </span>
           <br />
-          <Field type="text" name="name" />
+          <Field className={s.ifield} type="text" name="name" />
         </label>
         <br />
         <label>
-          <span>Telephone : </span>
+          <span className={s.text}>Telephone : </span>
           <br />
-          <Field type="text" name="number" />
+          <Field className={s.ifield} type="text" name="number" />
         </label>
         <br />
-        <button type="submit">▶ Create new user</button>
+        <button className={s.btnn} type="submit">
+          ▶ Create new contact
+        </button>
       </Form>
     </Formik>
   );
